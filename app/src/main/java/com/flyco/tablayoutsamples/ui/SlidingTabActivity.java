@@ -18,6 +18,7 @@ import com.flyco.tablayoutsamples.R;
 import com.flyco.tablayoutsamples.utils.ViewFindUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SlidingTabActivity extends AppCompatActivity implements OnTabSelectListener {
     private Context mContext = this;
@@ -64,7 +65,19 @@ public class SlidingTabActivity extends AppCompatActivity implements OnTabSelect
         /** indicator圆角色块 */
         SlidingTabLayout tabLayout_10 = ViewFindUtils.find(decorView, R.id.tl_10);
 
-        tabLayout_1.setViewPager(vp);
+        tabLayout_1.setTabData(Arrays.asList(mTitles));
+        tabLayout_1.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelect(int position) {
+                Toast.makeText(SlidingTabActivity.this,mTitles[position],Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onTabReselect(int position) {
+
+            }
+        });
+//        tabLayout_1.setViewPager(vp);
         tabLayout_2.setViewPager(vp);
         tabLayout_2.setOnTabSelectListener(this);
         tabLayout_3.setViewPager(vp);
@@ -78,7 +91,7 @@ public class SlidingTabActivity extends AppCompatActivity implements OnTabSelect
 
         vp.setCurrentItem(4);
 
-        tabLayout_1.showDot(4);
+//        tabLayout_1.showDot(4);
         tabLayout_3.showDot(4);
         tabLayout_2.showDot(4);
 

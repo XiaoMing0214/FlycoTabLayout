@@ -20,7 +20,7 @@
                 android:id="@+id/tl_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#666666"
+                android:background="#FF0000"
                 android:paddingBottom="15dp"
                 android:paddingTop="15dp"
                 tl:tl_indicator_gravity="TOP"
